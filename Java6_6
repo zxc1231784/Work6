@@ -1,0 +1,32 @@
+package Java6_6;
+
+public class java6_6 {
+
+	public static void main(String[] args) {
+		uniCode c = new uniCode();
+		c.code();
+
+	}
+
+}
+-----------------------------------------------------------------
+package Java6_6;
+
+import java.util.Scanner;
+
+public class uniCode {
+
+	void code() {
+		Scanner sc = new Scanner(System.in);
+		StringBuffer unicode = new StringBuffer();// 將字元轉換為unicode的函數
+		String s;
+
+		System.out.println("請輸入任一字串:");
+		s = sc.next();
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			unicode.append("\\u" + Integer.toHexString(c));
+		}
+		System.out.println(unicode);
+	}
+}
