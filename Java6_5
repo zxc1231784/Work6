@@ -1,0 +1,60 @@
+package Java6_5;
+
+public class java6_5 {
+
+	public static void main(String[] args) {
+		quit q = new quit();
+
+		q.quit();
+
+	}
+
+}
+----------------------------------------------------
+package Java6_5;
+
+import java.util.Scanner;
+
+public class quit {
+	Scanner sc = new Scanner(System.in);
+	int a = 0;
+	String s;
+	String[] ss = new String[1000];
+	int[] sum;
+	int sum1 = 0;
+
+	void quit() {
+		for (;;) {
+			System.out.println("請輸入數字:");
+			s = sc.next();
+			ss[a] = s;
+			a++;
+			if ("quit".equals(s)) {
+				break;
+			}
+
+		}
+		sum = new int[a - 1];
+		for (int i = 0; i < sum.length; i++) {
+			sum[i] = Integer.parseInt(ss[i]);
+		}
+		for (int i = 0; i < sum.length; i++) {
+			sum1 = sum1 + sum[i];
+		}
+		int min = sum[0];
+		int max = sum[0];
+		for (int i = 0; i < sum.length; i++) {
+			if (min > sum[i]) {
+				min = sum[i];
+			} else {
+				max = sum[i];
+			}
+		}
+		System.out.println("總和為:" + sum1);
+		System.out.println("總平均為:" + (sum1 / (a - 1)));
+		System.out.println("最大數為:" + max);
+		System.out.println("最小數為:" + min);
+
+	}
+
+}
