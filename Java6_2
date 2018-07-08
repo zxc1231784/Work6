@@ -1,0 +1,25 @@
+package Java6_2;
+
+public class java6_2 {
+
+	public static void main(String[] args) {
+		factorial a=new factorial();
+		System.out.println(a.factorail(10));
+
+	}
+
+}
+
+----------------------------------------------
+package Java6_2;
+
+public class factorial {
+	long factorail(int n) {
+		int sum = 1;
+		for (int i = 1; i <= n; i++) {
+			sum = sum * i;
+		}
+		return sum;
+	}
+
+}
