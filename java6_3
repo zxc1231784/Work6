@@ -1,0 +1,41 @@
+package Java6_3;
+
+public class java6_3 {
+
+	public static void main(String[] args) {
+
+		int a[] = { 123, 56, 179, 1265, 165, 46, 56 };
+		mySort ms = new mySort();
+		ms.mySort(a);
+
+		for (int i = 0; i < ms.arrayInt.length; i++) {
+			System.out.print(ms.arrayInt[i] + "\t");
+		}
+
+	}
+
+}
+--------------------------------------------------------------------------
+package Java6_3;
+
+public class mySort {
+	int arrayInt[];
+
+	int[] mySort(int[] arrayInt) {
+		this.arrayInt = arrayInt;
+		int max;
+		max = arrayInt[0];
+		for (int i = 0; i < arrayInt.length; i++) {
+			for (int j = 0; j < i; j++) {
+				if (arrayInt[i] < arrayInt[j]) {
+					max = arrayInt[j];
+					arrayInt[j] = arrayInt[i];
+					arrayInt[i] = max;
+				}
+
+			}
+		}
+		return arrayInt;
+	}
+
+}
