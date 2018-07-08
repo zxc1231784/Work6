@@ -1,0 +1,33 @@
+package Java6_1;
+
+public class java6_1 {
+
+	public static void main(String[] args) {
+		starSquare ss=new starSquare();
+
+		ss.starSquare(6, 13);
+
+
+	}
+
+}
+
+-------------------------------------------------------------------------------
+package Java6_1;
+
+public class starSquare {
+	int width;
+	int height;
+
+	void starSquare(int width, int height) {
+		// this.width=width;
+		// this.height=height;
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
+				System.out.print("*" + "\t");
+			}
+			System.out.println();
+		}
+	}
+
+}
