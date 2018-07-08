@@ -1,0 +1,29 @@
+package Java6_4;
+
+public class java6_4 {
+
+	public static void main(String[] args) {
+		luckyNumbers ln = new luckyNumbers();
+
+		int a[] = new int[6];
+		a = ln.luckyNumners();
+		for (int i = 0; i < 6; i++) {
+			System.out.print(a[i] + "\t");
+		}
+
+	}
+
+}
+------------------------------------------------------
+package Java6_4;
+
+public class luckyNumbers {
+
+	int[] luckyNumners() {
+		int a[] = new int[6];
+		for (int i = 0; i < a.length; i++) {
+			a[i] = (int) (Math.random() * 42) + 1;
+		}
+		return a;
+	}
+}
