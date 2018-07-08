@@ -1,0 +1,45 @@
+package Java6_7;
+
+public class java6_7 {
+
+	public static void main(String[] args) {
+		MyRectangl mr = new MyRectangl();
+		mr.depth = 10;
+		mr.width = 20;
+		System.out.println(mr.getArea());
+
+		MyRectangl mr1 = new MyRectangl(10, 20);
+		System.out.println(mr1.getArea());
+	}
+
+}
+---------------------------------------------------------
+package Java6_7;
+
+public class MyRectangl {
+	double width;
+	double depth;
+
+	void width(double width) {
+		this.width = width;
+	}
+
+	void depth(double depth) {
+		this.depth = depth;
+	}
+
+	double getArea() {
+		double area = depth * width;
+		return area;
+	}
+
+	public MyRectangl() {
+
+	}
+
+	public MyRectangl(double depth, double width) {
+		this.width = width;
+		this.depth = depth;
+	}
+
+}
