@@ -1,0 +1,54 @@
+package java6_5_a;
+
+public class java6_5_a {
+
+	public static void main(String[] args) {
+		quit a=new quit();
+		a.quit();
+
+	}
+
+}
+
+---------------------------------------------------
+package java6_5_a;
+
+import java.util.Scanner;
+
+public class quit {
+	Scanner sc = new Scanner(System.in);
+	String num;
+
+	int num1, avg, sum = 0, max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, a;
+
+	void quit() {
+
+		for (;;) {
+			System.out.println("請隨便輸入字串，若輸入數字會做運算，若輸入quit則跳出:");
+			if (sc.hasNextInt()) {
+				num1 = sc.nextInt();
+				a++;
+				sum = sum + num1;
+				if (max < num1) {
+					max = num1;
+				}
+				if (min > num1) {
+					min = num1;
+				}
+
+			}else {
+				num=sc.next();
+				if("quit".equals(num)) {
+					break;
+				}
+			}
+			}
+		
+
+		System.out.println(sum);
+		System.out.println(avg = sum / a);
+		System.out.println(max);
+		System.out.println(min);
+
+	}
+}
