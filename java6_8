@@ -18,7 +18,7 @@ public class java6_8 {
 		System.out.println(mr.equals(mr1));
 		System.out.println(mr.hashCode());
 		System.out.println(mr1.hashCode());
-		System.out.println(mr2.hashCode());
+
 
 	}
 
@@ -29,7 +29,7 @@ package java6_8;
 public class MyRectang {
 	double width;
 	double depth;
-	String code;
+
 
 	public MyRectang(double depth, double width) {
 		this.width = width;
@@ -68,11 +68,7 @@ public class MyRectang {
 
 class MyRectang1 extends MyRectang {
 
-	public int hashCode() {
 
-		return new Double(width).hashCode() ^ new Double(depth).hashCode();
-
-	}
 
 	public MyRectang1(double depth, double width) {
 		super(depth, width);
@@ -83,21 +79,32 @@ class MyRectang1 extends MyRectang {
 
 	}
 
+	@Override
 	public boolean equals(Object obj) {
-
-		if (obj instanceof MyRectang1 && obj != null) {
-
-			MyRectang mr = (MyRectang1) obj;
-
-			if (this.depth == mr.depth && this.width == mr.width) {
-				return true;
-			} else {
-				return false;
-
-			}
-		} else {
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-		}
+		if (getClass() != obj.getClass())
+			return false;
+		MyRectang other = (MyRectang) obj;
+		if (Double.doubleToLongBits(depth) != Double.doubleToLongBits(other.depth))
+			return false;
+		if (Double.doubleToLongBits(width) != Double.doubleToLongBits(other.width))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(depth);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(width);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
 	}
 
 	public boolean equals1(Object obj) {
