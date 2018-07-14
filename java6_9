@@ -1,0 +1,63 @@
+package java6_9;
+
+public class java6_9 {
+
+	public static void main(String[] args) {
+		Animal c1=new Cat();    //可以繼承
+		Animal d1=new Dog();    //可以繼承
+		Animal m1=new Mammal(); //可以繼承
+		Animal a1=new Animal(); 
+		Mammal c2=new Cat();    //可以繼承
+		Mammal d2=new Dog();	//可以繼承
+		Cat c3=new Cat();	//可以繼承
+		Dog d3=new Dog();   //可以繼承
+		c1.cry();
+		System.out.println();
+		d1.cry();
+		System.out.println();
+		m1.cry();
+		System.out.println();
+		a1.cry();
+		System.out.println();
+		
+
+	}
+
+}
+-----------------------------------------------------------------------
+package java6_9;
+
+public class Animal {
+    void cry() {
+    	System.out.println("????");
+    }
+}
+-------------------------------------------------------------------------
+package java6_9;
+
+public class Mammal extends Animal{
+	void cry() {
+		super.cry();
+		System.out.println("很多叫法");
+	}
+
+}
+----------------------------------------------------------------------
+package java6_9;
+
+public class Cat extends Mammal{
+	void cry() {
+		super.cry();
+		System.out.println("ㄚㄚㄚㄚㄚㄚ 我家的貓是這樣叫的"); 
+	}
+
+}
+---------------------------------------------------------------------
+package java6_9;
+
+public class Dog extends Mammal{
+void cry() {
+	super.cry();
+	System.out.println("汪");
+}
+}
